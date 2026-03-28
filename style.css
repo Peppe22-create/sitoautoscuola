@@ -1,0 +1,515 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+.blu{
+    color: rgb(0, 105, 179);
+    font-style: italic;
+    font-family: "DM Serif Text", serif;
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 780px;
+}
+
+.rosso {
+  color: rgb(216, 0, 17);
+  font-style: italic;
+  font-family: "DM Serif Text", serif;
+  font-weight: bold;
+  font-size: 40px;
+}
+.logo { 
+  width: 40px;
+  height: auto;
+ }
+
+
+/* 🔹 BODY */
+* {
+   margin: 0;
+   padding : 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   background-color: #f0e9e9;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.content{
+    width:80%;
+    margin: 0 auto;
+}
+
+.spacer{
+    padding: 70px 0;
+}
+
+#sport{
+    width: 500px;
+    height: auto;
+}
+
+nav {
+    padding: 0 20px;
+    background-color: #333;
+    position:relative;
+     z-index: 9999;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;;
+}
+
+.first {
+    text-transform: uppercase;
+    font-size:16px;
+    margin-left: 20px;
+    margin-top:4px; 
+}
+
+.elenco {
+    text-transform: uppercase;
+    font-size:16px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 18px 30px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #000;
+}
+
+.submenu {
+    position: absolute;
+    top: 53px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #bbb;
+    width: 100%;
+    padding: 30px;
+    display: none;
+}
+
+.show {
+    display: initial;
+}
+
+.mega-menu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.children {
+    width: 23%;
+}
+
+
+.sub-menu {
+    flex-direction: column;
+    line-height: 32px;
+}
+
+.sub-menu a{
+    padding: 0;
+    color:#333;
+    text-transform: none;
+}
+
+.sub-menu a:hover {
+    background-color: transparent;
+    color: #bbb;
+}
+
+
+.header {
+    font-size: 20px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+
+/* slideshow */
+.spazio{
+  background: url(immagini/stradanotte.jpg) no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  padding: 0;               /* 🔹 tolto il padding che sballava il centro */
+  overflow: hidden;         /* 🔹 mantiene pulito lo sfondo */
+  position: relative;
+}
+
+.slideshow {
+  position: relative;
+  z-index: 5;
+  width: min(100%, 1000px);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ccc;
+}
+
+  .slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 🔹 riempie il box senza deformare */
+  /* 🔹 Transizione fluida */
+  transition: transform 0.085s ease-in-out;
+  transform-origin: center;
+}
+
+.slide:hover {
+  transform: scale(1.0786);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}  
+.slide.active {
+  display: block;
+  animation: fade   2s; /* aggiunge l'animazione di dissolvenza */
+}
+
+
+
+/* Effetto dissolvenza */
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* 🔹 BENVENUTO */
+.benvenuto {
+text-align: center;
+  margin: 0 0 20px 0; /* NIENTE margine sopra, solo sotto */
+  background-color: rgb(216, 213, 213);
+  font-weight: bold;
+  font-style: rgb(0, 0, 0);
+  border: rgb(0, 105, 179) solid 4px;
+  padding: 30px 0; /* ↑ spazio sopra e sotto il testo */
+}
+
+/* 🔹 CHI SIAMO, testo introduttivo e mappa */
+#corsi{
+font-weight: bold;
+font-family: Times New Roman, Times, serif;
+background-color: rgb(218, 223, 223);
+text-align: center;
+border: #1d73d4 solid 3px;
+border-radius: 10px;
+color: rgb(0, 105, 179);;
+width: 450px;
+margin-bottom: 25px;
+
+}
+
+.background {
+  background-color: rgb(233, 241, 252);
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;               /* 🔹 spazio fra testo e mappa */
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+  color: #333;
+}
+
+.intro span {
+  flex: 1;                 /* 🔹 il testo occupa lo spazio disponibile */
+}
+
+.intro iframe {
+  flex: 0 0 400px;         /* 🔹 la mappa ha una larghezza fissa */
+  height: 400px;
+  border: 0;
+  border-radius: 10px;
+}
+
+
+/* 🔹 Link vari */
+
+.spazio_2 {
+background-color: #918b8b;
+}
+
+
+.titolo_servizi {
+  text-align: center;
+  font-size: 55px;
+  color: rgb(0, 105, 179);
+  margin-top: 40px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif ;
+}
+
+.servizi {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.servizi a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 200px;
+  height: 220px;
+  background-color: rgb(53, 114, 247);
+  border: solid 2px rgb(0, 105, 179);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.07s ease-in-out;
+  transform-origin: center;
+}
+
+.servizi img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background-color: #fff;
+  
+}
+
+.servizi a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.servizi p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* 🔹 Sezione contatti */
+.contatti-box {
+  background: #ffffff;
+  padding: 30px;
+  margin: 60px auto;
+  width: 90%;
+  border-left: 6px solid rgb(0,105,179);
+  border-radius: 18px;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.12),
+    inset 0 0 0 2px rgba(0,105,179,0.08);
+}
+
+.contatti-box h2 {
+  color: rgb(0,105,179);
+  font-size: 32px;
+  margin-top: 0;
+}
+
+
+/* ⭐ FOOTER  */
+
+.footer-tripodi {
+  background: linear-gradient(
+    180deg,
+    #f4fbff 0%,
+    #e3f1ff 100%
+  );
+  border-top: 5px solid rgb(0,105,179);
+  padding: 50px 0;
+  margin-top: 80px;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 260px;
+  color: #1c2b3a;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-name {
+  font-size: 32px;
+  font-family: "DM Serif Text", serif;
+  font-style: italic;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.footer-tripodi a {
+  color: rgb(0,105,179);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-tripodi a:hover {
+  color: rgb(216,0,17);
+  text-decoration: none;
+}
+
+.footer-col.center {
+  text-align: center;
+  opacity: 0.9;
+}
+
+.footer-col.right {
+  text-align: right;
+}
+
+.footer-col p {
+  margin: 6px 0;
+}
+
+/* ============================= */
+/* 📱 VERSIONE MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Evita scroll orizzontale */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Tutti i container principali in colonna */
+  .container,
+  .intro_corsi,
+  .footer-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  /* Testi principali */
+  .testo_corsi,
+  .testo_A1 {
+    width: 95% !important;
+    margin: 20px auto !important;
+    font-size: 16px;
+  }
+
+  /* Box informazioni */
+  .box_info,
+  .box_info_A1 {
+    width: 90% !important;
+    margin: 20px auto !important;
+  }
+
+  /* Titoli grandi */
+  .titolo_A1,
+  .sottotitoli_corsi,
+  .titoli_sottopagine,
+  .hero h1 {
+    font-size: 28px !important;
+  }
+
+  /* Rimuove le linee con margin-left enorme */
+  .titolo_A1::after,
+  .sottotitoli_corsi::after {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Immagini circolari più piccole */
+  .immagine_corsi,
+  .immagine_A1,
+  .contenitore_media,
+  .contenitore_slideshow {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  /* Hero section */
+  .hero {
+    height: 70vh;
+    padding: 20px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Sezioni con padding grande */
+  .panoramica_nautica {
+    padding: 60px 20px;
+  }
+
+  /* Card panoramica */
+  .box_panoramica {
+    padding: 25px;
+    width: 95%;
+  }
+
+  /* Footer */
+  .footer-col {
+    text-align: center !important;
+  }
+
+}
+
+/* 🔹 Sistema scritta Autoscuola Tripodi su telefono */
+.rosso,
+.blu,
+.footer-name {
+
+  font-size: 28px !important;   /* riduce grandezza */
+  text-align: center;
+  white-space: normal !important;  /* permette di andare a capo */
+  word-break: break-word;          /* evita uscita laterale */
+}
+
+/* Se sono affiancati */
+.header,
+.header-nautica {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+
+  .rosso,
+  .blu {
+    display: block;
+    padding-left: 0 !important;
+  }
+
+}

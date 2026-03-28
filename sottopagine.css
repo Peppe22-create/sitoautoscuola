@@ -1,0 +1,683 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 🔹 TITOLO */
+
+.rosso {
+  color: rgb(216, 0, 17);
+  font-style: italic;
+  font-family: "DM Serif Text", serif;
+  font-weight: bold;
+  font-size: 43px;
+}
+
+.blu {
+  color: rgb(0, 105, 179);
+  font-style: italic;
+  font-family: "DM Serif Text", serif;
+  font-weight: bold;
+  font-size: 43px;
+  padding-left: 15px;
+}
+
+.logo {
+  width: 35px;
+  height: auto;
+}
+
+.titolo {
+  text-align: left;
+  background-color: white;
+  position: static;   
+  top: 0;            
+  left: 0;
+  width: 100%;       
+  height: 70px;          
+  display: flex;         
+  align-items: center;   
+  padding-top: 20px;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  width: 100%;      /* mantiene la larghezza */
+  z-index: auto !important;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+}
+
+/* 🔹 Titoli_sottopagine */
+/* 🔹 Sezione di sfondo celestino */
+.sfondo {
+  background-color: rgb(196, 252, 252);
+  text-align: center;
+  padding: 40px 20px;           /* più spazio sopra e sotto */
+}
+
+/* 🔹 Titolo principale: "I nostri corsi" */
+.titoli_sottopagine {
+  font-family: "Playfair Display", serif; /* font elegante ma leggibile */
+  font-size: 50px;
+  color: rgb(60, 90, 120);
+  font-weight: 700;
+  letter-spacing: 2px;          /* leggero spazio tra le lettere */
+  margin: 0;
+  text-transform: uppercase;    /* tutto maiuscolo per impatto visivo */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15); /* piccola ombra per contrasto */
+}
+
+
+
+/* 🔹 Sottotitolo (frase di supporto sotto al titolo) */
+.sottotitoli_sottopagine {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: rgb(0, 105, 179);      /* riprende il blu del logo */
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 PATENTE AM */
+
+
+.sottotitoli_corsi {
+  font-family: "Poppins", "DM Serif Text", serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(0, 105, 179);
+  text-align: center;           /* ✅ allineamento a sinistra */
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-bottom: 15px;         /* 🔹 spostalo un po' verso l’interno */
+  margin-left: 10px;
+  text-transform: uppercase;
+  position: relative;
+
+}
+
+/* 🔹 Linea decorativa a sinistra del titolo */
+.sottotitoli_corsi::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: rgb(0, 105, 179);
+  margin-top: 8px;
+  border-radius: 2px;
+  margin: 8px auto 0;
+}
+
+/* 🔹 Animazione d’ingresso elegante */
+.sottotitoli_corsi{
+  animation: slide-in-left 0.5s;
+}
+
+@keyframes slide-in-left {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+.intro_corsi{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testo_corsi {
+  text-align:left !important;
+  background-color: rgb(235, 240, 245);
+  border-left: 5px solid rgb(0, 105, 179);
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.6;
+  text-justify: inter-word;
+  max-width: 900px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 🔹 Immagine corsi e effetto hover */
+
+.contenitore_media {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 4px solid rgb(0, 105, 179);
+  overflow: hidden; /* 🔹 serve per far sì che l’immagine o video restino dentro al cerchio */
+  flex-shrink: 0;   /* 🔹 evita che si deformi nel flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white; /* 🔹 opzionale, per coerenza visiva */
+    transition:
+    background-color 2s,
+}
+
+
+.contenitore_media .testo_hover {
+  position: absolute;
+  color: rgb(0, 105, 179);
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  padding: 20px;
+}
+
+.contenitore_media .testo_hover {
+  position: absolute;
+  color: #0689ec; /* azzurro chiarissimo */
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  z-index: 2; /* ✅ il testo sta sopra l’immagine */
+   pointer-events: none;
+}
+
+.contenitore_media:hover {
+  background-color: rgb(216, 234, 253); /* blu notte */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.immagine_corsi:hover {
+  opacity: 0;;
+}
+
+.contenitore_media:hover .testo_hover {
+  opacity: 1; /* 🔹 Appare la scritta */
+}
+
+.immagine_corsi {
+  width: 300px;
+  height: 300px;         /* 🔹 altezza uguale alla larghezza */
+  border-radius: 50%;    /* 🔹 crea la forma circolare */
+  object-fit: cover;     /* 🔹 riempie il cerchio senza deformare */
+  object-position: center; /* 🔹 centra l’immagine dentro il cerchio */
+  border: 4px solid rgb(0, 105, 179); /* opzionale: bordo blu */
+  display: block;
+}
+
+
+/* 🔹 Box informativa corsi */
+.box_info {
+  width: 260px;
+  background-color: white;
+  border-left: 5px solid rgb(0, 105, 179);
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  align-self: flex-start;
+  height: auto; /* 🔹 lascia che si adatti al contenuto */
+  font-family: "Poppins", Arial, sans-serif; /* 🔹 font più moderno e chiaro */
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 🔹 effetto hover */
+}
+
+/* 🔹 Titolo della box */
+.box_info h3 {
+  font-size: 22px;
+  color: rgb(0, 105, 179);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid rgb(0, 105, 179);
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+/* 🔹 Elenco */
+.box_info ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.box_info li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* 🔹 Piccola icona blu prima di ogni punto */
+.box_info li::before {
+  content: "✔";
+  color: rgb(0, 105, 179);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+}
+
+/* 🔹 Effetto al passaggio del mouse */
+.box_info:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 🔹 PATENTE A1 */
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.titolo_A1{
+  font-family: "Poppins", "DM Serif Text", serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(0, 105, 179);
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-bottom: 15px;         /* 🔹 spostalo un po' verso l’interno */
+  text-transform: uppercase;
+  margin-right: 10px;
+  animation-name: slide-in;
+  animation-duration: 0.5s;
+  text-align: center;
+}
+
+.titolo_A1::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: rgb(0, 105, 179);
+  margin-top: 8px;
+  border-radius: 2px;
+  margin: 8px auto 0;
+}
+
+@keyframes slide-in {
+  from {
+    translate: -150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+.testo_A1{
+  text-align:left !important;
+  background-color: rgb(235, 240, 245);
+  border-right: 5px solid rgb(0, 105, 179);
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.6;
+  text-justify: inter-word;
+  max-width: 900px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.immagine_A1 {
+  width: 300px;
+  height: 300px;         /* 🔹 altezza uguale alla larghezza */
+  border-radius: 50%;    /* 🔹 crea la forma circolare */
+  object-fit: cover;     /* 🔹 riempie il cerchio senza deformare */
+  object-position: center; /* 🔹 centra l’immagine dentro il cerchio */
+  border: 4px solid rgb(0, 105, 179); /* opzionale: bordo blu */
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.box_info_A1 {
+  width: 260px;
+  background-color: white;
+  border-left: 5px solid rgb(0, 105, 179);
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  align-self: flex-start;
+  height: auto; /* 🔹 lascia che si adatti al contenuto */
+  font-family: "Poppins", Arial, sans-serif; /* 🔹 font più moderno e chiaro */
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 🔹 effetto hover */
+}
+
+.box_info_A1 h3 {
+  font-size: 22px;
+  color: rgb(0, 105, 179);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid rgb(0, 105, 179);
+  padding-bottom: 5px;
+  font-weight: 700;
+}
+
+.box_info_A1 li {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* 🔹 Piccola icona blu prima di ogni punto */
+.box_info_A1 li::before {
+  content: "✔";
+  color: rgb(0, 105, 179);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+}
+
+/* 🔹 Effetto al passaggio del mouse */
+.box_info_A1:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Slideshow circolare */
+
+
+.contenitore_slideshow {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgb(0, 105, 179);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: auto;
+}
+
+/* 🔹 Immagini dentro lo slideshow */
+.slideshow {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* riempie il cerchio */
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+.polo-img {
+  object-fit: contain;      /* meno zoom */
+  transform: scale(0.9);    /* leggermente più piccola */
+}
+
+
+/* 🔹 Puntini di navigazione */
+.dots {
+  position: absolute;
+  bottom: 12px; /* distanza dal bordo inferiore del cerchio */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);  /* colore visibile su fondo scuro */
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+}
+
+.dot:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.dot.active {
+  background-color: rgb(0, 105, 179); /* blu acceso */
+  opacity: 1;
+}
+
+[id] {
+  scroll-margin-top: 120px;
+}
+
+/* 🔹 Sezione contatti */
+.contatti-box {
+  background: #ffffff;
+  padding: 30px;
+  margin: 60px auto;
+  width: 90%;
+  border-left: 6px solid rgb(0,105,179);
+  border-radius: 18px;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.12),
+    inset 0 0 0 2px rgba(0,105,179,0.08);
+}
+
+.contatti-box h2 {
+  color: rgb(0,105,179);
+  font-size: 32px;
+  margin-top: 0;
+}
+
+/* 🔹 Pulsante torna indietro */
+.btn-back {
+  background-color: rgb(0,105,179);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-back:hover {
+  background-color: rgb(216,0,17);
+}
+
+
+/* ⭐ FOOTER  */
+
+.footer-tripodi {
+  background: linear-gradient(
+    180deg,
+    #f4fbff 0%,
+    #e3f1ff 100%
+  );
+  border-top: 5px solid rgb(0,105,179);
+  padding: 50px 0;
+  margin-top: 80px;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 260px;
+  color: #1c2b3a;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-name {
+  font-size: 32px;
+  font-family: "DM Serif Text", serif;
+  font-style: italic;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.footer-tripodi a {
+  color: rgb(0,105,179);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-tripodi a:hover {
+  color: rgb(216,0,17);
+  text-decoration: none;
+}
+
+.footer-col.center {
+  text-align: center;
+  opacity: 0.9;
+}
+
+.footer-col.right {
+  text-align: right;
+}
+
+.footer-col p {
+  margin: 6px 0;
+} 
+
+/* ============================= */
+/* 📱 VERSIONE MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Evita scroll orizzontale */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Container principali in colonna */
+  .container,
+  .intro_corsi,
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-left: 0 !important;
+  }
+
+  /* Testi principali */
+  .testo_corsi,
+  .testo_A1 {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    margin: 20px 0;
+  }
+
+  /* Box informazioni */
+  .box_info,
+  .box_info_A1 {
+    width: 90%;
+    margin: 20px auto;
+    margin-left: 0 !important; /* 🔥 annulla quelli enormi desktop */
+  }
+
+  /* Titoli */
+  .titolo_A1,
+  .sottotitoli_corsi,
+  .titoli_sottopagine,
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  /* Linee decorative centrate */
+  .titolo_A1::after,
+  .sottotitoli_corsi::after {
+    margin: 8px auto 0;
+  }
+
+  /* Immagini circolari */
+  .immagine_corsi,
+  .immagine_A1,
+  .contenitore_media,
+  .contenitore_slideshow {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Sezione panoramica */
+  .panoramica_nautica {
+    padding: 60px 20px;
+  }
+
+  .box_panoramica {
+    padding: 25px;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  /* Footer */
+  .footer-col {
+    text-align: center;
+  }
+
+}

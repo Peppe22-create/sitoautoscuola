@@ -1,0 +1,588 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.rosso {
+  color: rgb(216, 0, 17);
+  font-style: italic;
+  font-family: "DM Serif Text", serif;
+  font-weight: bold;
+  font-size: 43px;
+}
+
+.blu {
+  color: rgb(0, 105, 179);
+  font-style: italic;
+  font-family: "DM Serif Text", serif;
+  font-weight: bold;
+  font-size: 43px;
+  padding-left: 15px;
+}
+
+.logo {
+  width: 35px;
+  height: auto;
+}
+
+
+.parallax {
+  position: relative;
+  height: 100vh;               /* schermo intero */
+  background-size: cover;
+  background-attachment: fixed; /* 💥 effetto parallax */
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenuto di ogni sezione */
+.sezione-testo {
+  background: rgba(255,255,255,0.85);
+  padding: 40px;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 1.2s ease;
+}
+
+/* piccola animazione in entrata */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Spazio tra sezioni */
+.break {
+  height: 50vh;
+  background: #ffffff;
+}
+
+.sfondo {
+  background-color: rgb(196, 252, 252);
+  text-align: center;
+  padding: 40px 20px;           /* più spazio sopra e sotto */
+}
+
+/* 🔹 Titolo principale: "I nostri corsi" */
+.titoli_sottopagine {
+  font-family: "Playfair Display", serif; /* font elegante ma leggibile */
+  font-size: 50px;
+  color: rgb(60, 90, 120);
+  font-weight: 700;
+  letter-spacing: 2px;          /* leggero spazio tra le lettere */
+  margin: 0;
+  text-transform: uppercase;    /* tutto maiuscolo per impatto visivo */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15); /* piccola ombra per contrasto */
+}
+
+
+
+/* 🔹 Sottotitolo (frase di supporto sotto al titolo) */
+.sottotitoli_sottopagine {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: rgb(0, 105, 179);      /* riprende il blu del logo */
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 18px;
+}
+
+.titoli_informazioni {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  color: rgb(40, 142, 245);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 40px;
+  margin-left: 10px;
+  background-color: rgba(186, 220, 255, 0.288);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px, 0, 20px;
+
+}
+
+.paragrafi_informazioni {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: rgb(29, 29, 29);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify;
+  margin-left: 10px;
+}
+
+/* 🔹 Sezione contatti */
+.contatti-box {
+  background: #ffffff;
+  padding: 30px;
+  margin: 60px auto;
+  width: 90%;
+  border-left: 6px solid rgb(0,105,179);
+  border-radius: 18px;
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.12),
+    inset 0 0 0 2px rgba(0,105,179,0.08);
+}
+
+.contatti-box h2 {
+  color: rgb(0,105,179);
+  font-size: 32px;
+  margin-top: 0;
+}
+
+/* 🔹 Pulsante torna indietro */
+.btn-back {
+  background-color: rgb(0,105,179);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-back:hover {
+  background-color: rgb(216,0,17);
+}
+
+
+/* ⭐ FOOTER  */
+
+.footer-tripodi {
+  background: linear-gradient(
+    180deg,
+    #f4fbff 0%,
+    #e3f1ff 100%
+  );
+  border-top: 5px solid rgb(0,105,179);
+  padding: 50px 0;
+  margin-top: 80px;
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 260px;
+  color: #1c2b3a;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-name {
+  font-size: 32px;
+  font-family: "DM Serif Text", serif;
+  font-style: italic;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.footer-tripodi a {
+  color: rgb(0,105,179);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-tripodi a:hover {
+  color: rgb(216,0,17);
+  text-decoration: none;
+}
+
+.footer-col.center {
+  text-align: center;
+  opacity: 0.9;
+}
+
+.footer-col.right {
+  text-align: right;
+}
+
+.footer-col p {
+  margin: 6px 0;
+} 
+
+
+/* LA NAUTICA  🌊 */
+
+.header-nautica {
+  background-color: rgba(156, 204, 255, 0.836); /* il blu chiaro che ti piace */
+  padding-top: 10px;  /* opzionale, ma rende tutto più arioso */
+  padding-bottom: 10px;
+  border-bottom: 4px solid rgb(0,105,179); /* linea di separazione */
+}
+
+
+/* 🔹 HERO SECTION */
+
+.hero {
+  position: relative;
+  height: 90vh; /* occupa quasi tutto lo schermo */
+  background: url("immagini/barca.jpeg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* sfumatura blu trasparente sopra l'immagine */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 50, 100, 0.35); /* tonalità blu trasparente */
+  backdrop-filter: blur(4px);          /* sfocatura dello sfondo */
+  -webkit-backdrop-filter: blur(4px);  /* compatibilità Safari */
+  z-index: 1;
+}
+
+/* contenuto in primo piano */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 60px;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.hero p {
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: #e6faff;
+}
+
+.hero-button {
+  background-color: rgb(0, 105, 179);
+  color: white;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: rgb(0, 80, 140);
+  transform: scale(1.05);
+}
+
+/* Cos'è la nautica*/
+.sottotitoli_corsi {
+  font-family: "Poppins", "DM Serif Text", serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(0, 105, 179);
+  text-align: center;           /* ✅ allineamento a sinistra */
+  letter-spacing: 1px;
+  margin-top: 40px;
+  margin-bottom: 15px;         /* 🔹 spostalo un po' verso l’interno */
+  margin-left: 10px;
+  text-transform: uppercase;
+  position: relative;
+
+}
+
+/* 🔹 Linea decorativa a sinistra del titolo */
+.sottotitoli_corsi::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: rgb(0, 105, 179);
+  margin-top: 8px;
+  border-radius: 2px;
+  margin-left: 783px
+}
+
+/* 🔹 Animazione d’ingresso elegante */
+.sottotitoli_corsi{
+  animation: slide-in-left 0.5s;
+}
+
+@keyframes slide-in-left {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+/* ---- PANORAMICA PATENTE NAUTICA ---- */
+
+.titolo_sezione {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.titolo_sezione span {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: rgb(0, 105, 179);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 18px;
+  display: inline-block;
+}
+
+/* linea decorativa animata */
+.titolo_sezione span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    rgb(0,105,179),
+    rgb(120,190,255)
+  );
+  transform: translateX(-50%);
+  border-radius: 5px;
+  box-shadow: 0 0 12px rgba(0,105,179,0.4);
+}
+
+/* leggero glow */
+.titolo_sezione span {
+  text-shadow: 0 3px 10px rgba(0,105,179,0.25);
+}
+
+.panoramica_nautica {
+  padding: 100px 40px;
+  background:
+    radial-gradient(circle at top, rgba(180,230,255,0.35), transparent 60%),
+    linear-gradient(180deg, #f4fbff, #ffffff);
+  position: relative;
+  overflow: hidden;
+}
+
+/* onda decorativa soft */
+.panoramica_nautica::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    to right,
+    rgba(0,105,179,0.12),
+    rgba(0,105,179,0.05),
+    rgba(0,105,179,0.12)
+  );
+  transform: skewY(-3deg);
+}
+
+.box_panoramica {
+  max-width: 950px;
+  margin: 0 auto 70px;
+  background: linear-gradient(135deg, #ffffff, #eef6ff);
+  border-left: 8px solid rgb(0, 105, 179);
+  padding: 40px 45px;
+  border-radius: 18px;
+  font-size: 19px;
+  line-height: 1.8;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  position: relative;
+}
+
+/* icona decorativa */
+.box_panoramica::before {
+  content: "⚓";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  font-size: 40px;
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.card_info {
+  background: linear-gradient(180deg, #ffffff, #f2f8ff);
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* luce laterale */
+.card_info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -60%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0,105,179,0.08),
+    transparent
+  );
+  transition: 0.4s;
+}
+
+.card_info:hover::after {
+  right: 100%;
+}
+
+.card_info:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+}
+
+.card_info h3 {
+  font-size: 24px;
+  margin-bottom: 14px;
+  color: rgb(0,105,179);
+}
+
+.card_info p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.call_to_action {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  padding: 35px 25px;
+  background: linear-gradient(90deg, rgb(0,105,179), rgb(0,150,220));
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.call_to_action strong {
+  color: #ffe66d;
+}
+
+/* ============================= */
+/* 📱 VERSIONE MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* Evita scroll orizzontale */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Tutti i container principali in colonna */
+  .container,
+  .intro_corsi,
+  .footer-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  /* Testi principali */
+  .testo_corsi,
+  .testo_A1 {
+    width: 95% !important;
+    margin: 20px auto !important;
+    font-size: 16px;
+  }
+
+  /* Box informazioni */
+  .box_info,
+  .box_info_A1 {
+    width: 90% !important;
+    margin: 20px auto !important;
+  }
+
+  /* Titoli grandi */
+  .titolo_A1,
+  .sottotitoli_corsi,
+  .titoli_sottopagine,
+  .hero h1 {
+    font-size: 28px !important;
+  }
+
+  /* Rimuove le linee con margin-left enorme */
+  .titolo_A1::after,
+  .sottotitoli_corsi::after {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Immagini circolari più piccole */
+  .immagine_corsi,
+  .immagine_A1,
+  .contenitore_media,
+  .contenitore_slideshow {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  /* Hero section */
+  .hero {
+    height: 70vh;
+    padding: 20px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Sezioni con padding grande */
+  .panoramica_nautica {
+    padding: 60px 20px;
+  }
+
+  /* Card panoramica */
+  .box_panoramica {
+    padding: 25px;
+    width: 95%;
+  }
+
+  /* Footer */
+  .footer-col {
+    text-align: center !important;
+  }
+
+}
